@@ -1,0 +1,46 @@
+version: "3"
+
+tasks:
+  build:
+    cmds:
+      - docker build -t mysql-for-progress .
+
+  docker-run:
+    cmds:
+      - |
+        docker run \
+          --name mysql-for-progress \
+          -p 3306:3306 \
+          mysql-for-progress
+
+  run:
+    deps: [build]
+    cmds:
+      - task: docker-run
+
+  start:
+    cmds:
+      - docker start mysql-for-progress
+
+  stop:
+    cmds:
+      - docker stop mysql-for-progress
+
+  rm-container:
+    cmds:
+      - docker rm mysql-for-progress
+
+  rm-image:
+    cmds:
+      - docker rmi $(docker images 'mysql-for-progress' -a -q)
+
+  clean:
+    cmds:
+      - cmd: task rm-container
+        ignore_error: true
+      - cmd: task rm-image
+        ignore_error: true
+
+  connect-db:
+    cmds:
+      - mysql -h 127.0.0.1 -p3306 -uroot -ppassword progress_test
