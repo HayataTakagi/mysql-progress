@@ -1,9 +1,25 @@
 # mysql-progress
 
 # Usage
-Example when the number of records to be processed is 1000
+- Clone this repository.
 ```
-../show-progress.sh 1000
+git clone git@github.com:HayataTakagi/mysql-progress.git
+```
+
+- Write the connection information in a `.my.cnf` file and place it in the directory where you run script.
+```
+[client]
+user=
+password=
+host=
+database=
+```
+
+
+- If the number of records to be processed is 1000, use the following command.
+
+```
+../show-write-progress.sh 1000
 ```
 
 ## For Mac
