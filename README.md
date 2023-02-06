@@ -1,5 +1,7 @@
 # mysql-progress
 
+![sample-for-update-progress](https://user-images.githubusercontent.com/28585609/216870086-b216a229-602f-4047-921a-9980f4ef1f2b.gif)
+
 # Usage
 - Clone this repository.
 ```
@@ -16,10 +18,14 @@ database=
 ```
 
 
-- If the number of records to be processed is 1000, use the following command.
+- If the number of records to be processed is 10000, use the following command.
 
 ```
-../show-write-progress.sh 1000
+# For write query
+../show-write-progress.sh 10000
+
+# For update query
+../show-update-progress.sh 10000
 ```
 
 ## For Mac
