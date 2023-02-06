@@ -26,6 +26,9 @@ database=
 
 # For update query
 ./show-update-progress.sh 10000
+
+# For delete query
+./show-delete-progress.sh 10000
 ```
 
 ## For Mac
