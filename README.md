@@ -22,10 +22,10 @@ database=
 
 ```
 # For write query
-../show-write-progress.sh 10000
+./show-write-progress.sh 10000
 
 # For update query
-../show-update-progress.sh 10000
+./show-update-progress.sh 10000
 ```
 
 ## For Mac
